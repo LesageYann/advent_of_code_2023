@@ -20,5 +20,9 @@ name = "d_two"
 path = "src/d_two.rs"
 
 [[bin]]
-name = "test"
-path = "src/test.rs"
+name = "d_three"
+path = "src/d_three.rs"
+
+[[bin]]
+name = "d_four"
+path = "src/d_four.rs"

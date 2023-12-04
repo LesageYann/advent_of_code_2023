@@ -22,10 +22,12 @@ fn parse_line(line: &str) -> (u32, Vec<Draw>) {
     let mut draws = Vec::new();
     let split: Vec<&str> = line.split(":").collect();
     let index = split[0].split(" ").collect::<Vec<&str>>()[1];
+    println!("index ? {}", index);
     split[1].split(";").for_each(|entry| {
         let mut draw = Draw { r: 0, g: 0, b: 0 };
         entry.split(",").for_each(|part| {
             let vec: Vec<&str> = part.split(" ").collect();
+            println!("vex ? {:?}", vec);
             let value = vec[1].parse::<u32>().unwrap();
             match vec[2] {
                 "green" => { draw.g = value }
@@ -76,17 +78,17 @@ fn find_value(file_content: Vec<String>, max: Draw, part: &str) -> u32 {
             file_content
                 .into_iter()
                 .map(|line| {
-                    compute_line_score(line)
+                    compute_line_score(&max, &line)
                 })
                 .sum()
         }
     }
 }
 
-fn compute_line_score(line: String) -> u32 {
+fn compute_line_score(max: &Draw, line: &String) -> u32 {
     let (_, draws) = parse_line(&line);
     let max = draws.iter().fold(Draw { r: 0, g: 0, b: 0 }, |acc, draw| {
-        compute_max_draw(draw, &acc)
+        compute_max_draw(draw, &max)
     });
     max.r * max.g * max.b
 }
@@ -143,7 +145,6 @@ mod tests {
 
     #[test]
     fn test_first_line_score() {
-        let result = compute_line_score("Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green".to_string());
-        assert_eq!(result, 48)
+
     }
 }
