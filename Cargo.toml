@@ -9,6 +9,7 @@ edition = "2021"
 debug = true
 
 [dependencies]
+rayon = "1.8.0"
 regex = "1.10.2"
 
 [[bin]]
@@ -26,3 +27,7 @@ path = "src/d_three.rs"
 [[bin]]
 name = "d_four"
 path = "src/d_four.rs"
+
+[[bin]]
+name = "d_five"
+path = "src/d_five.rs"
