@@ -50,7 +50,7 @@ fn count_combinaison(line: &String, part: Part) -> usize {
     let mut row: String = split.nth(0).unwrap().to_string();
     let mut pattern: Vec<usize> = split.nth(0).unwrap().split(",").map(|item| item.parse().unwrap()).collect();
     if part == Part::Two {
-        row = row.repeat(5);
+        row = vec!(row.as_str()).repeat(5).join("?");
         pattern = pattern.repeat(5);
     }
     arrangement(row, &pattern)
