@@ -9,6 +9,9 @@ edition = "2021"
 debug = true
 
 [dependencies]
+cache-macro = "0.4.1"
+lazy_static = "1.4.0"
+lru-cache = "0.1.2"
 rayon = "1.8.0"
 regex = "1.10.2"
 
@@ -31,3 +34,43 @@ path = "src/d_four.rs"
 [[bin]]
 name = "d_five"
 path = "src/d_five.rs"
+
+[[bin]]
+name = "d_06"
+path = "src/d_06.rs"
+
+[[bin]]
+name = "d_07"
+path = "src/d_07.rs"
+
+[[bin]]
+name = "d_08"
+path = "src/d_08.rs"
+
+[[bin]]
+name = "d_09"
+path = "src/d_09.rs"
+
+[[bin]]
+name = "d_10"
+path = "src/d_10.rs"
+
+[[bin]]
+name = "d_11"
+path = "src/d_11.rs"
+
+[[bin]]
+name = "d_12"
+path = "src/d_12.rs"
+
+[[bin]]
+name = "d_13"
+path = "src/d_13.rs"
+
+[[bin]]
+name = "d_14"
+path = "src/d_14.rs"
+
+[[bin]]
+name = "d_15"
+path = "src/d_15.rs"
